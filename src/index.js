@@ -4,10 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//redux
+import {createStore, combineReducers} from 'redux'
+import {Provider} from 'react-redux'
+
+//reducer
+const count = (state = 0, action) => {
+  console.log('hey im a reducer');
+  return state
+};
+
+//store
+const storeInstance = createStore(
+  count
+);
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={storeInstance}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
