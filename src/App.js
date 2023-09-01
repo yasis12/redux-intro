@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+//redux
+import { useSelector } from 'react-redux';
 
 function App() {
+
+  //useSelector accepts a function that tells it what part of the store you want
+  //here we return a whole store
+  const reduxStore = useSelector(store => store)
+
+  //we want one thing
+  const count = useSelector(store => store.count)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br></br>
+      <h2>{JSON.stringify(reduxStore)}</h2>
+      <p>count is: {count}</p>
+
     </div>
   );
 }

@@ -8,15 +8,30 @@ import reportWebVitals from './reportWebVitals';
 import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
 
+
+// old way let [count, setCount] = useState(0);
 //reducer
 const count = (state = 0, action) => {
-  console.log('hey im a reducer');
+  console.log('hi i\'m a reducer in count');
+  return state
+};
+
+// New reducer
+const elementList = (state = [], action) => {
+  console.log('hi i\'m a reducer in element list');
   return state
 };
 
 //store
 const storeInstance = createStore(
-  count
+
+  combineReducers (
+  { 
+    count, 
+    elementList
+  }
+  )
+
 );
 
 
