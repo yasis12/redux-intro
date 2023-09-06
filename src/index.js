@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //redux
-import {createStore, combineReducers} from 'redux'
-import {Provider} from 'react-redux'
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import logger from 'redux-logger';
 
 
 // old way let [count, setCount] = useState(0);
@@ -42,8 +43,10 @@ const storeInstance = createStore(
     count, 
     elementList
   }
+  ),
+  applyMiddleware(
+    logger
   )
-
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
