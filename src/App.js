@@ -22,7 +22,6 @@ function App() {
   // // this is for the input 
   // const elementList = useSelector(store => store.elementList);
 
-  
   return (
     <div className="App">
       <br></br>
