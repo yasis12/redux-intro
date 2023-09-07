@@ -9,7 +9,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
-
 // old way let [count, setCount] = useState(0);
 //reducer
 
@@ -34,6 +33,7 @@ const elementList = (state = [], action) => {
   if (action.type === 'ADD_ELEMENT') {
     console.log(`The element was ${action.payload}`);   
     //[ old array contents, new item]
+    // this is called a spread opperator ...
     return [...state, action.payload]
   }
   return state
