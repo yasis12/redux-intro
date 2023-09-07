@@ -28,10 +28,14 @@ const count = (state = 0, action) => {
   return state
 };
 
-// New reducer
+// New reducer (for the form)
 const elementList = (state = [], action) => {
   console.log('hi i\'m a reducer in element list');
-
+  if (action.type === 'ADD_ELEMENT') {
+    console.log(`The element was ${action.payload}`);   
+    //[ old array contents, new item]
+    return [...state, action.payload]
+  }
   return state
 };
 
